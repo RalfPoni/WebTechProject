@@ -52,7 +52,7 @@
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <input type="submit" name="submit" value="Sign In">
-      <p> hey
+      <p>
       <p>Forgot your password? Contact support@foo.com </p>
     </form>
     <p>Don't have an account yet? <a href='signup.php'>Sign up here</a></p>

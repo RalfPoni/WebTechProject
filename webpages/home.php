@@ -11,9 +11,12 @@
 
   <nav>
     <ul>
-      <li><a href='home.html'>Home</a></li>
-      <li><a href='menu.html'>Menu</a></li>
-      <li><a href='extras.html'>Extra</a></li>
+      <li><a href='home.php'>Home</a></li>
+      <li><a href='menu.php'>Menu</a></li>
+      <li><a href='extras.php'>Extra</a></li>
+      <form action="includes/logoutInc.php" method="post">
+      <li><input type="submit" name="submit" value="Log Out"></li>
+    </form>
     </ul>
   </nav>
   
