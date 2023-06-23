@@ -8,7 +8,7 @@
       <input type="submit" name="submit" value="Sign In"> -->
 
 <?php
-  echo "hi";
+  
   if(isset($_POST['submit'])){
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];

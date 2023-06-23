@@ -8,7 +8,7 @@ class SignupController extends Signup{
     private $passwordRepeat;
     private $email;
     public function __construct($firstName, $lastName, $username, $email
-                                ,$password, $passwordRepeat){
+                                ,$password, $passwordRepeat, $role){
                         
                     $this->firstName = $firstName;
                     $this->lastName = $lastName;
@@ -16,6 +16,7 @@ class SignupController extends Signup{
                     $this->email = $email;
                     $this->password = $password;
                     $this->passwordRepeat = $passwordRepeat;
+
 
                                 }
     
@@ -26,6 +27,29 @@ class SignupController extends Signup{
             }
 
             return true;
+    }
+
+   // private function validName(){
+     //   if(preg_match("/^[A-Z][A-Za-z]$/", $this->firstName) && preg_match("/^[A-Z][A-Za-z]$/", $this->lastName)){
+       ///     return true;
+     //}
+
+    ///    return false;
+   // }
+    private function validUser(){
+        if(preg_match("/^[A-Za-z][A-Za-z0-9]{2,29}$/", $this->username)){
+            return true;
+        }
+
+        return false;
+    }
+
+    private function validPassword(){
+        if(preg_match("/^(?=.*[0-9])(?=.*[A-Z]).{8,32}$/", $this->password)){
+            return true;
+        }
+
+        return false;
     }
 
     private function passwordMatch($password, $passwordRepeat){
@@ -39,6 +63,14 @@ class SignupController extends Signup{
         if($this->emptyInput()){
             die("Empty inputtt");
         }
+
+      //  if(!$this->validName()) {
+//die("Invalid name");
+      //  }
+
+        if(!$this->validPassword()) {
+            die("invalid password");
+        }
         
         if(!$this->passwordMatch($this->password, $this->passwordRepeat)) {
             die("Passwords don't match");
@@ -48,6 +80,9 @@ class SignupController extends Signup{
             die("Username/Email is already taken");
         }
 
+        if(!$this->validUser()){
+            die("Invalid username");
+        }
 
         $this->setUser($this->firstName, $this->lastName, $this->username, $this->email,
                         $this->password, "user");
