@@ -30,7 +30,7 @@ class SignupController extends Signup{
     }
 
     private function validName(){
-        if(preg_match("/^[a-zA-Z'-]+$/", $this->firstName) && preg_match("/^[A-Z][A-Za-z]$/", $this->lastName)){
+        if(preg_match("/^[a-zA-Z'-]+$/", $this->firstName) && preg_match("/^[a-zA-Z'-]+/", $this->lastName)){
             return true;
      }
 
@@ -59,18 +59,30 @@ class SignupController extends Signup{
         return false;
     }
 
+    private function validEmail(){
+        if (filter_var($this->email, FILTER_VALIDATE_EMAIL)){
+            return true;
+        }
+        return false;
+    }
+
     public function signUp(){
         if($this->emptyInput()){
             die("Empty inputtt");
         }
 
-      /*  if(!$this->validName()) {
+        if(!$this->validName()) {
             header("Location: ../signup.php?error=invalidName");
             exit();
-        } */
+        }
 
         if(!$this->validPassword()) {
             header("Location: ../signup.php?error=invalidPassword");
+            exit();
+        }
+
+        if(!$this->validEmail()){
+            header("Location: ../signup.php?error=invalidEmail");
             exit();
         }
         
