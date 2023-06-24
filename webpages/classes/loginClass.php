@@ -38,15 +38,29 @@ include_once "../classes/dbClass.php";
                     header("Location: ../signin.php?error=usernotfound");
                     exit();
                 }
-
-                $user = $statement->fetchAll(PDO::FETCH_ASSOC);
-
+                
+                $statement->execute(array($username, $username, $hashPass[0]["password"] ));
+                $user = $statement->fetch(PDO::FETCH_ASSOC);
+                $role = $user["role"];
+    
                 session_start();
-                $_SESSION["username"] = $user[0]["username"];
-                header("Location: ../home.php");
+                $_SESSION["username"] = $user["username"];
+
+                if ($user["role"] === "admin") 
+                {
+                    header("Location: ../admin_home.php");
+                } 
+                else 
+                {
+                    header("Location: ../home.php");
+                }
                 exit();
+
+
+                
             }
         }
     }
 
 ?>
+
