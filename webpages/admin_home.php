@@ -11,9 +11,9 @@
 
   <nav>
     <ul>
-      <li><a href='admin_home.php'>Home</a></li>
-      <li><a href='admin_menu.php'>Menu</a></li>
-      <li><a href='admin_extras.php'>Extra</a></li>
+      <li><a href='home.php'>Home</a></li>
+      <li><a href='menu.php'>Menu</a></li>
+      <li><a href='extras.php'>Extra</a></li>
       <li><a href='addfood.php'>Add Food</a></li>
       <form action="includes/logoutInc.php" method="post">
       <li><input type="submit" name="submit" value="Log Out"></li>

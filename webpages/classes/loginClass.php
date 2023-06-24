@@ -46,14 +46,12 @@ include_once "../classes/dbClass.php";
                 session_start();
                 $_SESSION["username"] = $user["username"];
 
-                if ($user["role"] === "admin") 
-                {
-                    header("Location: ../admin_home.php");
-                } 
-                else 
-                {
-                    header("Location: ../home.php");
+                if ($role === 'admin') {
+                    $_SESSION['role'] = 'admin';
+                } else {
+                    $_SESSION['role'] = 'user';
                 }
+                header("Location: ../home.php");
                 exit();
 
 

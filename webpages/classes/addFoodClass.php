@@ -2,73 +2,37 @@
 
 include_once "../classes/dbClass.php";
 
-class Food {
+
+class Food extends PDODB{
+
+    
     private $db;
 
-    public function __construct() {
+    public function __construct() 
+    {
         $this->db = new PDODB();
+        
     }
 
-    public function addFood($name, $description, $type, $price, $image) {
-        
-        $directory = 'uploads/';
-        $permissions = 0666;
+    
+    public function addFood($name, $description, $type, $price, $imageTmpName) {
 
-        if (!file_exists($directory)) {
+       
 
-            mkdir($directory, $permissions, true);
+        $imageData = file_get_contents($imageTmpName);
 
-        }
-        else 
-        { 
-            chmod($directory, $permissions);
-        }
+        $statement = $this->db->connect()->prepare('INSERT INTO food (name, description, type, price, isSold, image) VALUES (?, ?, ?, ?, ?, ?);');
 
-        $targetDir = "uploads/";
-        $fileName = basename($image["name"]);
-        $targetFilePath = $targetDir . $fileName;
-        $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+        $isSold = 0;
 
-        
-        $allowedTypes = array("jpg", "jpeg", "png", "gif");
-        if (!in_array(strtolower($fileType), $allowedTypes)) {
-            header("Location: ../addfood.php?error=invalidfiletype");
-            exit();
+        if (!$statement->execute(array($name, $description, $type, $price, $isSold, $imageData))) {
+            $statement = null;
+            die("Failed");
         }
 
-        
-        if (move_uploaded_file($image["tmp_name"], $targetFilePath)) {
-            
-            $query = "INSERT INTO food (name, description, type, price, image) VALUES (?, ?, ?, ?, ?)";
-            $params = array($name, $description, $type, $price, $fileName);
-
-            if ($this->db->executeQuery($query, $params)) {
-                
-                header("Location: ../admin_menu.php?success=1");
-                exit();
-            } else {
-                
-                header("Location: ../addfood.php?error=dberror");
-                exit();
-            }
-        } else {
-           
-            header("Location: ../addfood.php?error=fileupload");
-            exit();
-        }
+        header("Location: ../addfood.php");
+        exit();
     }
 }
 
-
-if (isset($_POST['submit'])) {
-    $name = $_POST["name"];
-    $description = $_POST["description"];
-    $type = $_POST["type"];
-    $price = $_POST["price"];
-    $image = $_FILES["image"];
-
-    $food = new Food();
-
-    $food->addFood($name, $description, $type, $price, $image);
-}
 ?>

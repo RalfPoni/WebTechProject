@@ -11,16 +11,16 @@
 
   <nav>
     <ul>
-     <li><a href='admin_home.php'>Home</a></li>
-      <li><a href='admin_menu.php'>Menu</a></li>
-      <li><a href='admin_extras.php'>Extra</a></li>
+     <li><a href='home.php'>Home</a></li>
+      <li><a href='menu.php'>Menu</a></li>
+      <li><a href='extras.php'>Extra</a></li>
       <li><a href='addfood.php'>Add Food</a></li>
     </ul>
   </nav>
 
    <section id="hero">
    <h2>Add Food</h2>
-    <form id="addFoodForm" action="classes/addFoodClass.php" method="POST" enctype="multipart/form-data">
+    <form id="addFoodForm" action="includes/addFoodInc.php" method="POST" enctype="multipart/form-data">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required><br>
 
@@ -36,7 +36,7 @@
       <label for="image">Image:</label>
       <input type="file" id="image" name="image" accept="image/*" required><br>
 
-      <button type="submit">Add Food</button>
+      <button type="submit" name="addSubmit">Add Food</button>
     </form>
   </section>
 
