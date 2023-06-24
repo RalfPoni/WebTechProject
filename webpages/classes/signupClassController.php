@@ -29,13 +29,13 @@ class SignupController extends Signup{
             return true;
     }
 
-   // private function validName(){
-     //   if(preg_match("/^[A-Z][A-Za-z]$/", $this->firstName) && preg_match("/^[A-Z][A-Za-z]$/", $this->lastName)){
-       ///     return true;
-     //}
+    private function validName(){
+        if(preg_match("/^[a-zA-Z'-]+$/", $this->firstName) && preg_match("/^[a-zA-Z'-]+/", $this->lastName)){
+            return true;
+     }
 
-    ///    return false;
-   // }
+        return false;
+    }
     private function validUser(){
         if(preg_match("/^[A-Za-z][A-Za-z0-9]{2,29}$/", $this->username)){
             return true;
@@ -59,29 +59,46 @@ class SignupController extends Signup{
         return false;
     }
 
+    private function validEmail(){
+        if (filter_var($this->email, FILTER_VALIDATE_EMAIL)){
+            return true;
+        }
+        return false;
+    }
+
     public function signUp(){
         if($this->emptyInput()){
             die("Empty inputtt");
         }
 
-      //  if(!$this->validName()) {
-//die("Invalid name");
-      //  }
+        if(!$this->validName()) {
+            header("Location: ../signup.php?error=invalidName");
+            exit();
+        }
 
         if(!$this->validPassword()) {
-            die("invalid password");
+            header("Location: ../signup.php?error=invalidPassword");
+            exit();
+        }
+
+        if(!$this->validEmail()){
+            header("Location: ../signup.php?error=invalidEmail");
+            exit();
         }
         
         if(!$this->passwordMatch($this->password, $this->passwordRepeat)) {
-            die("Passwords don't match");
+            header("Location: ../signup.php?error=passwordsDontMatch");
+            exit();
         }
 
         if(!$this->checkUser($this->username, $this->email)){
-            die("Username/Email is already taken");
+            header("Location: ../signup.php?error=userExists");
+            exit();
         }
 
-        if(!$this->validUser()){
-            die("Invalid username");
+        if(!$this->validUser()) {
+            header("Location: ../signup.php?error=invalidUsername");
+            exit();
         }
 
         $this->setUser($this->firstName, $this->lastName, $this->username, $this->email,
