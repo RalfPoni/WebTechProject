@@ -59,9 +59,8 @@ class Food {
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") 
-{
-    
+
+if (isset($_POST['submit'])) {
     $name = $_POST["name"];
     $description = $_POST["description"];
     $type = $_POST["type"];
