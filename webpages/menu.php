@@ -1,3 +1,8 @@
+<?php
+  session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +37,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2023 Food Delivery. All rights reserved.</p>
+    <p>&copy; 2023 Food Delivery. All rights reserved. Hello <?php echo $_SESSION['username']; ?> </p>
   </footer>
 
   <script src="script.js"></script>

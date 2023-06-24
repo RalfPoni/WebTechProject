@@ -20,7 +20,7 @@
 
    <section id="hero">
    <h2>Add Food</h2>
-    <form id="addFoodForm" action="webpage/classes/addFoodClass.php" method="POST" enctype="multipart/form-data">
+    <form id="addFoodForm" action="classes/addFoodClass.php" method="POST" enctype="multipart/form-data">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required><br>
 

@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +34,8 @@
   </section>
   <p></p>
   <footer>
-    <p>&copy; 2023 Food Online Delivery. All rights reserved.</p>
+    <p>&copy; 2023 Food Online Delivery. All rights reserved. Hello <?php echo $_SESSION["username"]?></p>
+ 
   </footer>
 
 </body>
