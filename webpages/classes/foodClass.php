@@ -104,6 +104,19 @@ class Food extends PDODB
         header("Location: ../editfood.php");
         exit();
     }
+
+    public function deleteFood($name){
+        $statement = $this->connect()->prepare('DELETE FROM food WHERE name = ?');
+        $filteredName = filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS);
+        if(!$statement->execute(array($filteredName))) {
+            $statement = null;
+            header("Location: ../deletefood.php?error=foodNotFound");
+            exit();
+        }
+
+        header("Location: ../deletefood.php");
+        exit();
+    }
 }
 
 ?>
