@@ -34,19 +34,21 @@
    <section id="hero">
     <h2 style="font-family:Lucida Console;">Delicious Food Delivered to Your Doorstep</h2>
     <p style="font-family:Lucida Console;">Order online and enjoy a wide variety of tasty dishes.</p>
-    <a style="font-family:Lucida Console;" href='menu.html' class="button">Order Now</a>
+    <a style="font-family:Lucida Console;" href='menu.php' class="button">Order Now</a>
   </section>
    <p></p>
+   <?php if($_SESSION["role"] === 'admin') { ?>
 <section id="hero">
-    <h2 style="font-family:Lucida Console;">Become part of FOO</h2>
-    <p style="font-family:Lucida Console;">The ultimate platform to showcase your culinary delights to a hungry audience</p>
-    <a style="font-family:Lucida Console;" href='admin.html' class="button">Start Serving</a>
+    <h2 style="font-family:Lucida Console;">Welcome back <?php echo $_SESSION["username"]; ?></h2>
+    <a style="font-family:Lucida Console;" href='admin.php' class="button">Manage menu</a>
   </section>
   </section>
   <p></p>
   <footer>
     <p style="font-family:Lucida Console;" >&copy; 2023 Food Online Delivery. All rights reserved.</p>
   </footer>
+
+  <?php } ?>
 
   <script src="script.js"></script>
 </body>

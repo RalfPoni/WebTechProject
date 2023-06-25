@@ -11,7 +11,7 @@
   <header>
     <h1>FOO</h1>
   </header>
-
+  
   <nav>
     <ul>
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
@@ -20,6 +20,9 @@
       <li style="font-family:Lucida Console;"><a href='addfood.php'>Add Food</a></li>
     </ul>
   </nav>
+  <?php if($_SESSION["role"] === 'admin') { ?>
+
+  
 
    <section id="hero">
    <h2>Add Food</h2>
@@ -45,6 +48,15 @@
       <button type="submit" name="editSubmit">Add Food</button>
     </form>
   </section>
+  
+  <?php } else { ?>
+
+<section id="hero">
+<h2 style="font-family:Lucida Console;">You do not have proper access to this page</h2>
+<p style="font-family:Lucida Console;">If you think this is a mistake, please contact an administrator</p>
+</section>
+
+<?php } ?>
 
   <footer>
     <p>&copy; 2023 Food Delivery. All rights reserved.</p>
