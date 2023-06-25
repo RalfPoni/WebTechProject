@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+?>
 <html>
 <head>
   <title>Food Online Delivery</title>
@@ -11,10 +14,10 @@
 
   <nav>
     <ul>
-     <li><a href='home.php'>Home</a></li>
-      <li><a href='menu.php'>Menu</a></li>
-      <li><a href='extras.php'>Extra</a></li>
-      <li><a href='addfood.php'>Add Food</a></li>
+      <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
+      <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
+      <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
+      <li style="font-family:Lucida Console;"><a href='addfood.php'>Add Food</a></li>
     </ul>
   </nav>
 

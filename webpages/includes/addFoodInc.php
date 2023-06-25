@@ -1,24 +1,24 @@
 
 <?php
-  
-  echo "Hello1";
+
   if (isset($_POST['addSubmit']))
   {
-    echo "Hello";
+    include_once "../classes/dbClass.php";
+    include_once "../classes/foodClass.php";
+    
     $name = $_POST["name"];
     $description = $_POST["description"];
     $type = $_POST["type"];
     $price = $_POST["price"];
-    $image = $_FILES["image"];
-    $imageTmpName = $image["tmp_name"];
+    $image = $_FILES["image"]["name"];
 
-    include_once "../classes/addFoodClass.php";
-    include_once "../classes/dbClass.php";
+    
 
     
     $food = new Food();
-    $food->addFood($name, $description, $type, $price, $imageTmpName);
-    echo "Hello";
+    $food->addFood($name, $description, $type, $price, $image);
+
+    return $food;
   }
 
 ?>
