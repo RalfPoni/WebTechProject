@@ -19,14 +19,20 @@
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
 
       <?php
+      if(!empty($_SESSION)) {
       if ($_SESSION["role"] === "admin") 
       {
         echo "<li style='font-family:Lucida Console';><a href='addfood.php'>Add Food</a></li>";
       }
-      ?>
+    }
+    ?>
       
+      <?php if(!empty($_SESSION)){ ?>
       <form action="includes/logoutInc.php" method="post">
       <li><input type="submit" name="submit" value="Log Out"></li>
+      <?php } else { ?>
+      <li><a href="signin.php">Sign In</a></li>
+      <?php } ?>
     </ul>
   </nav>
   
