@@ -11,9 +11,9 @@
 
   <nav>
     <ul>
-     <li style="font-family:Lucida Console;"><a href='home.html'>Home</a></li>
-      <li style="font-family:Lucida Console;"><a href='menu.html'>Menu</a></li>
-      <li style="font-family:Lucida Console;"><a href='extras.html'>Extra</a></li>
+     <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
+      <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
+      <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
     </ul>
   </nav>
   

@@ -11,9 +11,9 @@
 
   <nav>
     <ul>
-      <li style="font-family:Lucida Console;"><a href='home.html'>Home</a></li>
-      <li style="font-family:Lucida Console;"><a href='menu.html'>Menu</a></li>
-      <li style="font-family:Lucida Console;"><a href='extras.html'>Extra</a></li>
+      <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
+      <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
+      <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
     </ul>
   </nav>
   
@@ -21,13 +21,13 @@
    <section id="hero">
     <h2 style="font-family:Lucida Console;">Delicious Food Delivered to Your Doorstep</h2>
     <p style="font-family:Lucida Console;">Order online and enjoy a wide variety of tasty dishes.</p>
-    <a style="font-family:Lucida Console;" href='menu.html' class="button">Order Now</a>
+    <a style="font-family:Lucida Console;" href='menu.php' class="button">Order Now</a>
   </section>
    <p></p>
 <section id="hero">
     <h2 style="font-family:Lucida Console;">Become part of FOO</h2>
     <p style="font-family:Lucida Console;">The ultimate platform to showcase your culinary delights to a hungry audience</p>
-    <a style="font-family:Lucida Console;" href='admin.html' class="button">Start Serving</a>
+    <a style="font-family:Lucida Console;" href='admin.php' class="button">Start Serving</a>
   </section>
   </section>
   <p></p>
