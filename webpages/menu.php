@@ -64,7 +64,7 @@
 
   <input type="text" id="searchInput" placeholder="Search by food name">
   <button onclick="searchFood()">Search</button>
-  <div id="resultsContainer"></div>
+  <div id="resultsContainer" class="menu"></div>
    
   </section>
 

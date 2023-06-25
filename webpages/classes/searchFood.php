@@ -26,7 +26,7 @@
     
     foreach ($results as $row) 
     {
-        echo '<div class="dish">';
+        echo '<div class="menu-item">';
         echo '<h3 style="font-family: Lucida Console; color:green">' . $row['name'] . '</h3>';
         if ($row['image']) 
         {
@@ -35,7 +35,7 @@
             $base64Image = base64_encode($imageData);
             $imageSrc = 'data:image/jpeg;base64,' . $base64Image;
 
-            echo '<img src="' . $imageSrc . '" alt="Food Image" width="200">';
+            echo '<img src="' . $imageSrc . '" alt="Food Image" width="200" height="200">';
         }
         echo '<h3 style="font-family: Lucida Console; color:green">' . $row['type'] . '</h4>';
         echo '<h3 style="font-family: Lucida Console; color:green">' . $row['description'] . '</h4>';
