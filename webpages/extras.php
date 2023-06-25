@@ -21,7 +21,7 @@
       <?php
       if ($_SESSION["role"] === "admin") 
       {
-        echo "<li style='font-family:Lucida Console';><a href='addfood.php'>Add Food</a></li>";
+        echo "<li style='font-family:Lucida Console';><a href='admin.php'>Add Food</a></li>";
       }
       ?>
     </ul>

@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="styles1.css">
 
   <script>
+
     function searchFood() 
     {
 
@@ -54,7 +55,7 @@
       if(!empty($_SESSION)){
       if ($_SESSION["role"] === "admin") 
       {
-        echo "<li style='font-family:Lucida Console';><a href='addfood.php'>Add Food</a></li>";
+        echo "<li style='font-family:Lucida Console';><a href='admin.php'>Add Food</a></li>";
       }
     }
       ?>

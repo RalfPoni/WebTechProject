@@ -17,7 +17,7 @@
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
       <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
-      <li style="font-family:Lucida Console;"><a href='addfood.php'>Add Food</a></li>
+      <li style="font-family:Lucida Console;"><a href='admin.php'>Add Food</a></li>
     </ul>
   </nav>
   <?php if($_SESSION["role"] === 'admin') { ?>

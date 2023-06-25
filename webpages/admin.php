@@ -17,15 +17,6 @@
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
       <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
-
-      <?php
-      if(!empty($_SESSION)) {
-      if ($_SESSION["role"] === "admin") 
-      {
-        echo "<li style='font-family:Lucida Console';><a href='admin.php'>Add Food</a></li>";
-      }
-    }
-    ?>
       
       <?php if(!empty($_SESSION)){ ?>
       <form action="includes/logoutInc.php" method="post">
@@ -37,16 +28,15 @@
   </nav>
   
  
+  <?php if($_SESSION["role"] === 'admin') { ?>
    <section id="hero">
-    <h2 style="font-family:Lucida Console;">Delicious Food Delivered to Your Doorstep</h2>
-    <p style="font-family:Lucida Console;">Order online and enjoy a wide variety of tasty dishes.</p>
-    <a style="font-family:Lucida Console;" href='menu.php' class="button">Order Now</a>
+    <h2 style="font-family:Lucida Console;">Welcome back <?php echo $_SESSION["username"]; ?></h2>
   </section>
    <p></p>
-   <?php if($_SESSION["role"] === 'admin') { ?>
 <section id="hero">
-    <h2 style="font-family:Lucida Console;">Welcome back <?php echo $_SESSION["username"]; ?></h2>
-    <a style="font-family:Lucida Console;" href='admin.php' class="button">Manage menu</a>
+    <a style="font-family:Lucida Console;" href='addfood.php' class="button">Add to Menu</a>
+    <a style="font-family:Lucida Console;" href='editfood.php' class="button">Edit menu</a>
+    <a style="font-family:Lucida Console;" href='deletefood.php' class="button">Delete from menu</a>
   </section>
   </section>
   <p></p>
@@ -54,7 +44,14 @@
     <p style="font-family:Lucida Console;" >&copy; 2023 Food Online Delivery. All rights reserved.</p>
   </footer>
 
-  <?php } ?>
+  <?php } else { ?>
+
+<section id="hero">
+<h2 style="font-family:Lucida Console;">You do not have proper access to this page</h2>
+<p style="font-family:Lucida Console;">If you think this is a mistake, please contact an administrator</p>
+</section>
+
+<?php } ?>
 
   <script src="script.js"></script>
 </body>
