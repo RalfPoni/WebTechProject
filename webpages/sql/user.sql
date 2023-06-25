@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2023 at 10:02 PM
+-- Generation Time: Jun 26, 2023 at 12:14 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,8 +41,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`firstName`, `lastName`, `username`, `email`, `password`, `role`) VALUES
-('Admin', 'User', 'admin', 'admin@gmail.com', 'admin', 'admin'),
-('Test', 'User', 'user', 'user@gmail.com', 'user', 'user');
+('Fight', 'Guy', 'Maximum', 'max@gmail.com', '$2y$10$TNkgWpsb6Z/baJyU7ba3tugpo06hfWdJoZkSnv3r3btet3HTf82Fu', 'admin');
 
 --
 -- Indexes for dumped tables
