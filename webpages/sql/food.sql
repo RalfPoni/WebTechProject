@@ -34,7 +34,7 @@ CREATE TABLE `food` (
   `type` varchar(255) NOT NULL,
   `price` float NOT NULL,
   `isSold` tinyint(1) NOT NULL DEFAULT 1,
-  'image' VARBINARY(MAX) NOT NULL
+  `image` LONGBLOB NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

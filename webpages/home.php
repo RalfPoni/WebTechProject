@@ -1,8 +1,7 @@
-<?php 
+<!DOCTYPE html>
+<?php
   session_start();
 ?>
-
-<!DOCTYPE html>
 <html>
 <head>
   <title>Food Online Delivery</title>
@@ -18,6 +17,16 @@
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
       <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
+
+      <?php
+      if ($_SESSION["role"] === "admin") 
+      {
+        echo "<li style='font-family:Lucida Console';><a href='addfood.php'>Add Food</a></li>";
+      }
+      ?>
+      
+      <form action="includes/logoutInc.php" method="post">
+      <li><input type="submit" name="submit" value="Log Out"></li>
     </ul>
   </nav>
   
@@ -25,19 +34,16 @@
    <section id="hero">
     <h2 style="font-family:Lucida Console;">Delicious Food Delivered to Your Doorstep</h2>
     <p style="font-family:Lucida Console;">Order online and enjoy a wide variety of tasty dishes.</p>
-    <a style="font-family:Lucida Console;" href='menu.php' class="button">Order Now</a>
+    <a style="font-family:Lucida Console;" href='menu.html' class="button">Order Now</a>
   </section>
    <p></p>
-
-<?php if($_SESSION["role"] === "admin") { ?>
 <section id="hero">
-    <h2 style="font-family:Lucida Console;">Welcome back <?php echo $_SESSION["username"]; ?></h2>
-    <p style="font-family:Lucida Console;">Would you like to update the menu?</p>
-    <a style="font-family:Lucida Console;" href='admin.php' class="button">Change Menu</a>
+    <h2 style="font-family:Lucida Console;">Become part of FOO</h2>
+    <p style="font-family:Lucida Console;">The ultimate platform to showcase your culinary delights to a hungry audience</p>
+    <a style="font-family:Lucida Console;" href='admin.html' class="button">Start Serving</a>
   </section>
   </section>
   <p></p>
-  <?php } ?>
   <footer>
     <p style="font-family:Lucida Console;" >&copy; 2023 Food Online Delivery. All rights reserved.</p>
   </footer>
@@ -45,4 +51,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
