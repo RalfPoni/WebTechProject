@@ -1,4 +1,4 @@
-<?php
+<?php 
   session_start();
 ?>
 
@@ -10,41 +10,39 @@
 </head>
 <body>
   <header>
-    <h1>FOO</h1>
+    <h1 style="font-family:Lucida Console;">FOO</h1>
   </header>
 
   <nav>
     <ul>
-      <li><a href='home.php'>Home</a></li>
-      <li><a href='menu.php'>Menu</a></li>
-      <li><a href='extras.php'>Extra</a></li>
-      
-      <?php
-      if ($_SESSION["role"] === "admin") 
-      {
-        echo "<li><a href='addfood.php'>Add Food</a></li>";
-      }
-      ?>
-      <form action="includes/logoutInc.php" method="post">
-      <li><input type="submit" name="submit" value="Log Out"></li>
-    </form>
+      <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
+      <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
+      <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
     </ul>
   </nav>
   
  
    <section id="hero">
-    <h2>Delicious Food Delivered to Your Doorstep</h2>
-    <p>Order online and enjoy a wide variety of tasty dishes.</p>
-    <a href="menu.php" class="button">Order Now</a>
+    <h2 style="font-family:Lucida Console;">Delicious Food Delivered to Your Doorstep</h2>
+    <p style="font-family:Lucida Console;">Order online and enjoy a wide variety of tasty dishes.</p>
+    <a style="font-family:Lucida Console;" href='menu.php' class="button">Order Now</a>
   </section>
-   
+   <p></p>
+
+<?php if($_SESSION["role"] === "admin") { ?>
+<section id="hero">
+    <h2 style="font-family:Lucida Console;">Welcome back <?php echo $_SESSION["username"]; ?></h2>
+    <p style="font-family:Lucida Console;">Would you like to update the menu?</p>
+    <a style="font-family:Lucida Console;" href='admin.php' class="button">Change Menu</a>
+  </section>
   </section>
   <p></p>
+  <?php } ?>
   <footer>
-    <p>&copy; 2023 Food Online Delivery. All rights reserved. Hello <?php echo $_SESSION["username"]?></p>
- 
+    <p style="font-family:Lucida Console;" >&copy; 2023 Food Online Delivery. All rights reserved.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
 
