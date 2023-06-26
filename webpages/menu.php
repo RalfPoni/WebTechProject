@@ -6,39 +6,6 @@
 <head>
   <title>Food Online Delivery</title>
   <link rel="stylesheet" type="text/css" href="styles1.css">
-
-  <script>
-
-    function searchFood() 
-    {
-
-      var searchValue = document.getElementById('searchInput').value;
-      var xhr = new XMLHttpRequest()
-
-      xhr.onreadystatechange = function() 
-      {
-        if (xhr.readyState === XMLHttpRequest.DONE) 
-        {
-          if (xhr.status === 200) 
-          {
-          
-            var response = xhr.responseText;
-            document.getElementById('resultsContainer').innerHTML = response;
-
-          }
-          else 
-          {
-            console.error('Error: ' + xhr.status);
-          }
-        }
-      };
-
-      xhr.open('GET', 'classes/searchFood.php?name=' + searchValue, true);
-      xhr.send();
-
-    }
-
-  </script>
 </head>
 <body>
   <header>
@@ -65,16 +32,24 @@
  
   <h1>Menu</h1>
 
+
   <input type="text" id="searchInput" placeholder="Search by food name">
   <button onclick="searchFood()">Search</button>
-  <div id="resultsContainer" class="menu"></div>
-   
-  </section>
 
+  <?php include 'classes/createTypeFilter.php'; ?>
+
+
+  <select id="priceOrder" onchange="searchFood()">
+    <option value="">Order by Price</option>
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+  
+  <div id="resultsContainer" class="menu"></div>
   <footer>
     <p style="font-family:Lucida Console;">&copy; 2023 Food Delivery. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="scripts/searchScript.js"></script>
 </body>
 </html>
