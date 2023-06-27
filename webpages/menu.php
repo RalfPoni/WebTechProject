@@ -16,7 +16,6 @@
     <ul>
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
       <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
-      <li style="font-family:Lucida Console;"><a href='cart.php'>Cart</a></li>
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
 
       <?php
@@ -31,7 +30,7 @@
   </nav>
   
  
-  <h1 style="font-family: Lucida Console; color:green">Menu</h1>
+  <h1>Menu</h1>
 
 
   <input type="text" id="searchInput" placeholder="Search by food name">

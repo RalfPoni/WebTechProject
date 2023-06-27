@@ -6,7 +6,6 @@ function searchFood()
 
     var xhr = new XMLHttpRequest();
 
-    //hi
     xhr.onreadystatechange = function() 
     {
         if (xhr.readyState === XMLHttpRequest.DONE) 
@@ -29,13 +28,7 @@ function searchFood()
     
 }
 
-window.onload = function() {
-
-    var searchButton = document.getElementById('searchButton');
-
-    if (searchButton) 
-    {
-      searchButton.addEventListener('click', searchFood);
-    }
-
+window.onload = function() 
+{
+    searchFood();
 };
