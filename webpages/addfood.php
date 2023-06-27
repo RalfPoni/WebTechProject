@@ -57,7 +57,5 @@
   <footer>
     <p>&copy; 2023 Food Delivery. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

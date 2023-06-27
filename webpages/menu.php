@@ -15,7 +15,6 @@
   <nav>
     <ul>
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
-      <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
 
       <?php
@@ -26,6 +25,14 @@
       }
     }
       ?>
+
+      <?php if(!empty($_SESSION)){ ?>
+      <form action="includes/logoutInc.php" method="post">
+      <li><input type="submit" name="submit" value="Log Out"></li>
+      <?php } else { ?>
+      <li><a href="signin.php" style="font-family:Lucida Console;">Sign In</a></li>
+      <?php } ?>
+
     </ul>
   </nav>
   

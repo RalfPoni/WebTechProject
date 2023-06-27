@@ -22,7 +22,7 @@
       <form action="includes/logoutInc.php" method="post">
       <li><input type="submit" name="submit" value="Log Out"></li>
       <?php } else { ?>
-      <li><a href="signin.php">Sign In</a></li>
+      <li><a href="signin.php" style="font-family:Lucida Console;">Sign In</a></li>
       <?php } ?>
     </ul>
   </nav>
@@ -53,6 +53,5 @@
 
 <?php } ?>
 
-  <script src="script.js"></script>
 </body>
 </html>

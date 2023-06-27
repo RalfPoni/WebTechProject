@@ -20,6 +20,12 @@
       <li style="font-family:Lucida Console;"><a href='admin.php'>Add Food</a></li>
     </ul>
   </nav>
+  <?php if(!empty($_SESSION)){ ?>
+      <form action="includes/logoutInc.php" method="post">
+      <li><input type="submit" name="submit" value="Log Out"></li>
+      <?php } else { ?>
+      <li><a href="signin.php" style="font-family:Lucida Console;">Sign In</a></li>
+      <?php } ?>
   <?php if($_SESSION["role"] === 'admin') { ?>
 
   
@@ -61,7 +67,5 @@
   <footer>
     <p>&copy; 2023 Food Delivery. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
