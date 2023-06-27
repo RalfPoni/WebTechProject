@@ -4,6 +4,8 @@
 
     $foodSearch = new FoodSearch();
     $foodTypes = $foodSearch->getFoodTypes();
+    
+    $typeFilter = $_GET['typeFilter'] ?? '';
 ?>
 
 <select id="typeFilter" onchange="searchFood()">

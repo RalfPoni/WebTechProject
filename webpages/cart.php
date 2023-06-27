@@ -31,26 +31,20 @@
   </nav>
   
  
-  <h1 style="font-family: Lucida Console; color:green">Menu</h1>
+  <h1 style="font-family: Lucida Console; color:green">Cart</h1>
+  <?php include 'classes/searchFood.php';
 
+    $foodSearch = new FoodSearch();
+    $foodSearch->displayCart();
+   ?>
 
-  <input type="text" id="searchInput" placeholder="Search by food name">
-  <button onclick="searchFood()">Search</button>
-
-  <?php include 'classes/createTypeFilter.php'; ?>
-
-
-  <select id="priceOrder" onchange="searchFood()">
-    <option value="">Order by Price</option>
-    <option value="asc">Ascending</option>
-    <option value="desc">Descending</option>
-  </select>
-  
-  <div id="resultsContainer" class="menu"></div>
+   
   <footer>
     <p style="font-family:Lucida Console;">&copy; 2023 Food Delivery. All rights reserved.</p>
   </footer>
 
-  <script src="scripts/searchScript.js"></script>
+  <script src="scripts/cartScript.js"></script>
 </body>
 </html>
+
+

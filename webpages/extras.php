@@ -16,6 +16,7 @@
     <ul>
       <li style="font-family:Lucida Console;"><a href='home.php'>Home</a></li>
       <li style="font-family:Lucida Console;"><a href='menu.php'>Menu</a></li>
+      <li style="font-family:Lucida Console;"><a href='cart.php'>Cart</a></li>
       <li style="font-family:Lucida Console;"><a href='extras.php'>Extra</a></li>
 
       <?php
@@ -58,7 +59,6 @@
     <p style="font-family:Lucida Console;">&copy; 2023 Food Delivery. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
 
